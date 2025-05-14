@@ -1,27 +1,24 @@
+Python and auto-py-to-exe Installation Scripts
+This repository contains batch scripts that automate the installation of Python and the auto-py-to-exe tool, as well as a simple shortcut to launch the auto-py-to-exe GUI. The scripts are designed to make setting up Python development environments and converting Python scripts into executable files easier.
 
-🔧 Script Overview (English Description)
-This is a Windows batch script designed to automate the installation of Python and the auto-py-to-exe tool, with a simple interactive menu and administrator privilege elevation.
+Scripts Overview
+1. Install Python and auto-py-to-exe
+Script: install_python_and_auto_py_to_exe.bat
 
-💡 Features
-Automatic Administrator Privilege Check and Elevation
+This batch script helps you install Python (multiple versions) and the auto-py-to-exe tool on a Windows machine. It includes an interactive menu for selecting Python versions, downloading them, and verifying the installation.
 
-The script checks if it’s running as administrator.
+Key Features:
+Admin Privileges Check: The script checks if it's run as an administrator. If not, it will automatically elevate privileges using PowerShell.
 
-If not, it relaunches itself with admin rights using PowerShell.
+Interactive Menu:
 
-Interactive Menu Interface
+Option 1: Install Python (multiple versions to choose from).
 
-Presents a command-line menu with the following options:
+Option 2: Install auto-py-to-exe and its dependencies.
 
-markdown
-複製
-編輯
-1. Install Python (multiple versions available)
-2. Install auto-py-to-exe (and its dependencies)
-0. Exit
-Python Installation (Multiple Versions)
+Option 0: Exit the script.
 
-Allows the user to choose from a list of Python versions:
+Python Installation: Allows you to install one of the following Python versions:
 
 Python 3.7.9
 
@@ -35,24 +32,68 @@ Python 3.11.9
 
 Python 3.12.2
 
-Downloads the chosen version from the official Python website.
+auto-py-to-exe Installation: Installs auto-py-to-exe through pip and makes it available to convert Python scripts into executable files.
 
-Installs Python silently (/quiet mode), adds it to the system PATH, and skips optional components like the test suite.
+2. Shortcut to Open auto-py-to-exe GUI
+Script: open_auto_py_to_exe.bat
 
-Verifies installation by checking python --version.
+This simple batch script is used to open the auto-py-to-exe graphical user interface (GUI), allowing you to easily convert Python scripts into Windows executable files.
 
-auto-py-to-exe Installation
+Key Features:
+Easy Access: Double-click to launch the auto-py-to-exe GUI for creating .exe files from Python scripts.
 
-Ensures pip is available and up-to-date.
+Requirements:
 
-Installs auto-py-to-exe via pip.
+Python must be installed and added to the system PATH.
 
-Provides confirmation and instructions to launch the GUI using auto-py-to-exe.
+auto-py-to-exe should be installed using the command:
 
-📦 Technical Notes
-Encoding: Sets the console to UTF-8 (chcp 65001) for proper Unicode support.
+bash
+複製
+編輯
+pip install auto-py-to-exe
+How to Use the Scripts
+1. Install Python and auto-py-to-exe
+Download or clone the repository.
 
-Robust Flow Control: Uses delayed variable expansion (setlocal enabledelayedexpansion) and input validation to ensure smooth operation.
+Double-click install_python_and_auto_py_to_exe.bat.
 
-Error Handling: If downloads fail or invalid options are selected, the script shows error messages and returns to the appropriate menu.
+Follow the on-screen prompts to:
+
+Select the Python version to install.
+
+Download and install the selected Python version.
+
+Install auto-py-to-exe through pip.
+
+Once completed, you can confirm the installation by typing python --version in the command prompt to check the Python version and ensure the setup is correct.
+
+2. Open auto-py-to-exe GUI
+Double-click open_auto_py_to_exe.bat to launch the auto-py-to-exe graphical interface.
+
+Use the GUI to convert your Python scripts into .exe executables by following the on-screen instructions.
+
+Additional Information
+Python Installation:
+
+The script supports multiple versions of Python and downloads the version of your choice from the official Python website.
+
+It also installs Python silently, adds it to the system PATH, and skips unnecessary components.
+
+After installation, it validates Python by checking the installed version using python --version.
+
+auto-py-to-exe Installation:
+
+The script ensures pip is available and up-to-date.
+
+It installs auto-py-to-exe, which can then be used to convert Python scripts to standalone executable files for Windows.
+
+Troubleshooting
+If you encounter any issues during installation:
+
+Ensure that you have administrator privileges, especially for installing Python.
+
+Check if your internet connection is stable during the download process for Python.
+
+If you face issues with auto-py-to-exe, ensure Python and pip are correctly installed and accessible.
 
