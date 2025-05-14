@@ -49,7 +49,9 @@ Python must be installed and added to the system PATH.
 auto-py-to-exe should be installed using the command:
 
 、、、
+
 pip install auto-py-to-exe
+
 、、、
 
 How to Use the Scripts
